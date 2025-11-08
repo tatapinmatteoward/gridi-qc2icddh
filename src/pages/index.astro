@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Home - Gridiron Gazette";
+const pageDescription = "Dive into the latest NFL and MLB insights, breaking news, player stats, and expert analysis at Gridiron Gazette, your go-to source for bold sports coverage.";
+
+const latestNFLBuzz = [
+  {
+    title: "Week 10 Highlights",
+    description: "The Chiefs dominate again—Mahomes magic or defensive wizardry? Dive into our breakdown."
+  },
+  {
+    title: "Trade Rumors Heating Up",
+    description: "Will the Cowboys make a splash before the deadline?"
+  },
+  {
+    title: "Injury Updates",
+    description: "Key players sidelined—how it impacts your fantasy lineup."
+  }
+];
+
+const mlbPowerPlays = [
+  {
+    title: "World Series Preview",
+    description: "Dodgers vs. Yankees—who claims the crown?"
+  },
+  {
+    title: "Rookie of the Year Race",
+    description: "Standout performances shaking up the competition."
+  },
+  {
+    title: "Pitcher Spotlight",
+    description: "Emerging arms making waves in the league."
+  }
+];
+
+const featuredArticles = [
+  {
+    title: "Mahomes' Record-Breaking Season",
+    excerpt: "How the QB is redefining the position in 2023.",
+    category: "NFL"
+  },
+  {
+    title: "Yankees' Dynasty Continues",
+    excerpt: "The Bronx Bombers show why they're MLB's premier team.",
+    category: "MLB"
+  },
+  {
+    title: "Defensive Breakthroughs",
+    excerpt: "How new strategies are changing the game.",
+    category: "NFL"
+  },
+  {
+    title: "Cy Young Race Analysis",
+    excerpt: "The top contenders for the prestigious award this year.",
+    category: "MLB"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-[#b71c1c] to-[#d32f2f] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Welcome to <span class="text-[#ffd700]">Gridiron Gazette</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 font-bold">
+          Your Ultimate Source for NFL and Baseball Insights
+        </p>
+        <p class="text-lg text-white max-w-2xl mb-10">
+          Dive into the latest NFL and MLB insights, breaking news, player stats, and expert analysis. 
+          Get ready to tackle the gridiron and swing for the fences!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="bg-[#ffd700] hover:bg-[#ffc400] text-[#b71c1c] font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Latest News
+          </button>
+          <button class="bg-transparent border-2 border-white hover:bg-white hover:text-[#b71c1c] text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300">
+            Subscribe Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
+  </section>
+
+  <!-- NFL Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-12">
+        <div class="w-12 h-12 bg-[#b71c1c] rounded-full flex items-center justify-center mr-4">
+          <i class="fas fa-football-ball text-white text-2xl"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Latest NFL Buzz</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestNFLBuzz.map((item, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-[#ffd700] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+              <span class="bg-[#b71c1c] text-white text-xs font-bold px-3 py-1 rounded-full mr-3">NFL</span>
+              <h3 class="text-xl font-bold text-white">{item.title}</h3>
+            </div>
+            <p class="text-gray-300">{item.description}</p>
+            <div class="mt-4 flex items-center text-[#ffd700]">
+              <span class="font-bold">Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MLB Section -->
+  <section class="py-16 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-12">
+        <div class="w-12 h-12 bg-[#ffd700] rounded-full flex items-center justify-center mr-4">
+          <i class="fas fa-baseball-ball text-[#b71c1c] text-2xl"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-white">MLB Power Plays</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {mlbPowerPlays.map((item, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-6 border border-gray-600 hover:border-[#ffd700] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+              <span class="bg-[#ffd700] text-[#b71c1c] text-xs font-bold px-3 py-1 rounded-full mr-3">MLB</span>
+              <h3 class="text-xl font-bold text-white">{item.title}</h3>
+            </div>
+            <p class="text-gray-300">{item.description}</p>
+            <div class="mt-4 flex items-center text-[#b71c1c]">
+              <span class="font-bold">Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  <section class="py-16 bg-gradient-to-b from-gray-900 to-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured Articles</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Expert analysis, detailed breaking news, and insider insights that define the sports landscape.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {featuredArticles.map((article, index) => (
+          <div key={index} class="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-[#ffd700] transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-r from-[#b71c1c] to-[#d32f2f] relative">
+              <div class="absolute top-4 right-4 bg-[#ffd700] text-[#b71c1c] font-bold px-3 py-1 rounded-full text-sm">
+                {article.category}
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-[#ffd700] transition-colors duration-300">{article.title}</h3>
+              <p class="text-gray-400 mb-4">{article.excerpt}</p>
+              <div class="flex items-center text-[#ffd700]">
+                <span class="font-bold">Read Full Article</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="bg-transparent border-2 border-[#ffd700] text-[#ffd700] hover:bg-[#ffd700] hover:text-[#b71c1c] font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300">
+          View All Articles
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-20 bg-gradient-to-r from-[#b71c1c] to-[#d32f2f]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Stay Ahead of the Game</h2>
+      <p class="text-xl text-white mb-10 max-w-2xl mx-auto">
+        Subscribe to our newsletter for exclusive insights, breaking news, and expert analysis delivered straight to your inbox.
+      </p>
+      <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="flex-grow px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#ffd700]"
+        />
+        <button class="bg-[#ffd700] hover:bg-[#ffc400] text-[#b71c1c] font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+</style>

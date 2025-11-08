@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Baseball Beat: Your Pulse on MLB Action";
+const pageDescription = "Dive into the latest MLB news, player analyses, game breakdowns, and expert insights from the Gridiron Gazette's Baseball Beat. Stay ahead with bold takes on the diamond.";
+const latestHeadlines = [
+  {
+    id: 1,
+    title: "Yankees Rally in Epic Comeback",
+    content: "Down by 5 in the 8th, New York's bats exploded for a stunning victory over the Red Sox. Aaron Judge's clutch double sealed the deal—*is this the start of another playoff push?*",
+    category: "Breaking News"
+  },
+  {
+    id: 2,
+    title: "Dodgers Acquire Ace Pitcher",
+    content: "In a blockbuster move, LA bolsters their rotation with a trade for veteran hurler Max Scherzer. How will this impact their World Series odds?",
+    category: "Trade Deadline"
+  },
+  {
+    id: 3,
+    title: "Rookie Sensation Shines",
+    content: "Chicago Cubs' prospect hits his 10th homer of the season, drawing attention from MLB scouts across the league.",
+    category: "Rising Stars"
+  }
+];
+const featuredArticle = {
+  title: "The Evolution of Pitching in the Modern Era",
+  excerpt: "How analytics and technology are reshaping how teams approach the mound in today's MLB landscape.",
+  author: "Alex Rodriguez",
+  date: "May 15, 2023"
+};
+const trendingTopics = [
+  "World Series Predictions",
+  "Cy Young Award Contenders",
+  "Player Development Programs",
+  "Expansion Draft Impacts"
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-red-900 via-red-800 to-yellow-600 py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmRlMDAiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        <span class="inline-block px-4 py-1 bg-yellow-500 text-red-900 font-bold rounded-full mb-4">BASEBALL BEAT</span>
+        <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+          {pageTitle}
+        </h1>
+        <p class="text-xl md:text-2xl text-yellow-100 max-w-3xl leading-relaxed">
+          Dive into the latest MLB news, player analyses, game breakdowns, and expert insights from the Gridiron Gazette's Baseball Beat. Stay ahead with bold takes on the diamond.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <button class="px-8 py-3 bg-white text-red-800 font-bold text-lg rounded-full hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg">
+            Latest News
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-red-800 transition-all">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center p-6 bg-red-900 rounded-lg border-2 border-yellow-500">
+          <div class="text-4xl font-black text-yellow-400 mb-2">256</div>
+          <div class="text-xl font-bold text-white">Games Covered</div>
+        </div>
+        <div class="text-center p-6 bg-red-900 rounded-lg border-2 border-yellow-500">
+          <div class="text-4xl font-black text-yellow-400 mb-2">128</div>
+          <div class="text-xl font-bold text-white">Player Profiles</div>
+        </div>
+        <div class="text-center p-6 bg-red-900 rounded-lg border-2 border-yellow-500">
+          <div class="text-4xl font-black text-yellow-400 mb-2">75</div>
+          <div class="text-xl font-bold text-white">Expert Analysis</div>
+        </div>
+        <div class="text-center p-6 bg-red-900 rounded-lg border-2 border-yellow-500">
+          <div class="text-4xl font-black text-yellow-400 mb-2">42</div>
+          <div class="text-xl font-bold text-white">Trade Insights</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Story -->
+  <section class="py-20 bg-gradient-to-br from-gray-900 to-black">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-2/3">
+          <span class="inline-block px-4 py-1 bg-yellow-500 text-red-900 font-bold rounded-full mb-6">FEATURED STORY</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">{featuredArticle.title}</h2>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 rounded-full bg-red-700 flex items-center justify-center">
+              <span class="font-bold text-white">{featuredArticle.author.charAt(0)}</span>
+            </div>
+            <div>
+              <div class="font-bold text-white">{featuredArticle.author}</div>
+              <div class="text-gray-400">{featuredArticle.date}</div>
+            </div>
+          </div>
+          <button class="inline-flex items-center px-8 py-3 bg-yellow-500 text-red-900 font-bold text-lg rounded-full hover:bg-yellow-400 transition-all">
+            Read Full Article
+            <i class="fas fa-arrow-right ml-3"></i>
+          </button>
+        </div>
+        <div class="lg:w-1/3">
+          <div class="relative">
+            <div class="absolute -top-6 -right-6 w-full h-full bg-yellow-500 rounded-lg"></div>
+            <div class="relative bg-gray-800 border-2 border-yellow-500 rounded-lg p-8">
+              <div class="bg-gray-700 border border-gray-600 rounded-lg h-64 flex items-center justify-center">
+                <i class="fas fa-baseball-ball text-yellow-400 text-6xl"></i>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-2xl font-bold text-white mb-3">Pitching Evolution</h3>
+                <p class="text-gray-300">How analytics are changing bullpen strategies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Headlines -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Latest Headlines</h2>
+        <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {latestHeadlines.map((article) => (
+          <div class="bg-gradient-to-br from-red-900 to-gray-900 rounded-xl overflow-hidden border-2 border-yellow-500 hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-3 py-1 bg-yellow-500 text-red-900 font-bold text-sm rounded-full">{article.category}</span>
+                <i class="fas fa-fire text-red-500 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-4">{article.title}</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">{article.content}</p>
+              <button class="text-yellow-400 font-bold flex items-center hover:text-yellow-300">
+                Read More
+                <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Topics -->
+  <section class="py-20 bg-gradient-to-r from-red-900 to-yellow-700">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Trending Topics</h2>
+        <p class="text-xl text-yellow-100 max-w-2xl mx-auto">Stay ahead with the hottest discussions across the MLB landscape</p>
+        <div class="w-24 h-1 bg-white mx-auto mt-6"></div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-6">
+        {trendingTopics.map((topic, index) => (
+          <div key={index} class="px-8 py-4 bg-white text-red-900 font-bold text-xl rounded-full border-2 border-red-900 hover:bg-yellow-500 hover:text-red-900 transition-all transform hover:scale-105">
+            {topic}
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-20 text-center">
+        <h3 class="text-3xl font-black text-white mb-6">Join the Baseball Conversation</h3>
+        <button class="px-10 py-4 bg-black text-yellow-400 font-bold text-xl rounded-full border-2 border-yellow-400 hover:bg-yellow-400 hover:text-black transition-all">
+          <i class="fab fa-twitter mr-3"></i> Follow Us on Twitter
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Never Miss a Beat</h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">Join thousands of baseball fans who rely on the Gridiron Gazette for in-depth coverage and exclusive insights.</p>
+      
+      <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+        <input 
+          type="email" 
+          placeholder="Your email address" 
+          class="flex-grow px-6 py-4 text-lg rounded-full bg-gray-800 text-white border border-gray-700 focus:border-yellow-500 focus:outline-none"
+        />
+        <button class="px-8 py-4 bg-yellow-500 text-red-900 font-bold text-lg rounded-full hover:bg-yellow-400 transition-all">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gradient-border {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #b71c1c, #ffd700, #b71c1c, #ffd700);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: inherit;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .section-card {
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  .section-card:hover {
+    border-color: #ffd700;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+  }
+</style>
