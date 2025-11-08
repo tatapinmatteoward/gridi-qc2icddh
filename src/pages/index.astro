@@ -34,6 +34,21 @@ const mlbPowerPlays = [
   }
 ];
 
+const nextHomerun = [
+  {
+    title: "Rising Stars",
+    description: "Meet the next generation of MLB sluggers making waves."
+  },
+  {
+    title: "Power Rankings",
+    description: "Who's leading the home run race this season?"
+  },
+  {
+    title: "Historic Moments",
+    description: "Memorable home runs that changed the game."
+  }
+];
+
 const featuredArticles = [
   {
     title: "Mahomes' Record-Breaking Season",
@@ -106,6 +121,34 @@ const featuredArticles = [
             </div>
             <p class="text-gray-300">{item.description}</p>
             <div class="mt-4 flex items-center text-[#ffd700]">
+              <span class="font-bold">Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Homerun Section -->
+  <section class="py-16 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-12">
+        <div class="w-12 h-12 bg-[#ffd700] rounded-full flex items-center justify-center mr-4">
+          <i class="fas fa-baseball text-[#b71c1c] text-2xl"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Next Homerun</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {nextHomerun.map((item, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-6 border border-gray-600 hover:border-[#ffd700] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+              <span class="bg-[#ffd700] text-[#b71c1c] text-xs font-bold px-3 py-1 rounded-full mr-3">MLB</span>
+              <h3 class="text-xl font-bold text-white">{item.title}</h3>
+            </div>
+            <p class="text-gray-300">{item.description}</p>
+            <div class="mt-4 flex items-center text-[#b71c1c]">
               <span class="font-bold">Read More</span>
               <i class="fas fa-arrow-right ml-2"></i>
             </div>
